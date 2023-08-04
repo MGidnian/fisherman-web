@@ -6,17 +6,17 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <url>
-  <loc>http://fisherman.app/</loc>
+  <loc>https://fisherman.app/</loc>
   <lastmod>2023-08-04T21:30:17+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>http://fisherman.app/docs/privacy.html</loc>
+  <loc>https://fisherman.app/docs/privacy.html</loc>
   <lastmod>2023-08-04T21:30:17+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>http://fisherman.app/docs/terms.html</loc>
+  <loc>https://fisherman.app/docs/terms.html</loc>
   <lastmod>2023-08-04T21:30:17+00:00</lastmod>
   <priority>0.80</priority>
 </url>
