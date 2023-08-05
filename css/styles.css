@@ -840,16 +840,21 @@ nav {
 }
 
 .links ul li:hover {
-  background: linear-gradient(to bottom, #2596be 10%, ##2587be 100%);
-  background-clip: border-box;
+  background: linear-gradient(to bottom, #2596be 0%, #2587be 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .links ul li a {
   color: #363636;
+  text-decoration: none;
+}
+.links ul li a:hover {
+  color: #ff0000;
 }
 /* End: Footer Section Styling */
+
 
 /* End: Main CSS Rules */
 
