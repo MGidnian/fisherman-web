@@ -1550,8 +1550,8 @@ nav {
   padding: 15px;
   cursor: pointer;
   color: #000000;
-  width: 120%; /* Makes the cards narrower */
-  max-width: 800px; /* Prevents the cards from becoming too wide */
+  width: 105%; /* Increase the width by 15% */
+  max-width: 1050px; /* Ensure it doesn't get too wide on large screens */
 }
 
 .faq-card h3 {
@@ -1612,4 +1612,12 @@ nav {
 
 .faq-card.active .expand-symbol {
   transform: rotate(45deg); /* Rotate to make it look like a minus sign */
+}
+
+@media (max-width: 768px) {
+  .faq-card {
+    width: 90%; /* Adjust the width for mobile devices */
+    max-width: 100%; /* Ensure it fits the screen width on mobile */
+    margin: 10px auto; /* Reduce the margin for mobile */
+  }
 }
