@@ -1550,8 +1550,8 @@ nav {
   padding: 15px;
   cursor: pointer;
   color: #000000;
-  width: 105%; /* Increase the width by 15% */
-  max-width: 1050px; /* Ensure it doesn't get too wide on large screens */
+  width: 90%; /* Make the card slightly wider on large screens */
+  max-width: 850px; /* Cap the width for larger screens */
 }
 
 .faq-card h3 {
@@ -1616,8 +1616,8 @@ nav {
 
 @media (max-width: 768px) {
   .faq-card {
-    width: 90%; /* Adjust the width for mobile devices */
-    max-width: 100%; /* Ensure it fits the screen width on mobile */
-    margin: 10px auto; /* Reduce the margin for mobile */
+    width: 95%; /* Adjust the width for mobile devices */
+    max-width: 100%; /* Ensure it fits the screen width */
+    margin: 15px auto; /* Adjust the margin to give space */
   }
 }
