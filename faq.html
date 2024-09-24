@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="page-title">Fisherman FAQ</title>
+
+    <!-- Preload primary favicon and main resources -->
+    <link rel="preload" href="images/favicon/favicon-32x32.png" as="image">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" as="style">
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="css/grid.css" as="style">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="images/favicon/site.webmanifest" />
+    <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#2596be" />
+    <meta name="msapplication-config" content="images/favicon/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- LATO — Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet" />
+
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/grid.css" />
+
+    <!-- Custom FAQ Style -->
+    <style>
+      .faq-container {
+        padding: 20px;
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: left;
+      }
+      .faq-title {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+      .faq-card {
+        background: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 10px;
+        padding: 15px;
+        cursor: pointer;
+      }
+      .faq-card h3 {
+        margin: 0;
+        font-size: 1.5rem;
+      }
+      .faq-answer {
+        display: none;
+        padding-top: 10px;
+        font-size: 1rem;
+      }
+      .language-selector {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .language-selector select {
+        padding: 10px;
+        font-size: 1rem;
+      }
+    </style>
+
+    <!-- FAQ Page Scripts -->
+    <script>
+      // Toggle FAQ answer visibility
+      function toggleFaqAnswer(faqId) {
+        var answerElement = document.getElementById(faqId);
+        if (answerElement.style.display === 'block') {
+          answerElement.style.display = 'none';
+        } else {
+          answerElement.style.display = 'block';
+        }
+      }
+
+      // Handle language change
+      function setLanguage(lang) {
+        const urlParams = new URLSearchParams(window.location.search);
+        urlParams.set('lang', lang);
+        window.location.search = urlParams.toString();
+
+        updateLanguage();
+      }
+
+      // Update the page content based on selected language
+      function updateLanguage() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const lang = urlParams.get('lang') || 'he';
+
+        const faqData = {
+          en: {
+            title: 'Fisherman FAQ',
+            questions: [
+              { q: 'How does Fisherman block phishing?', a: 'Fisherman automatically detects and blocks phishing messages using advanced AI filters.' },
+              { q: 'Is the app free?', a: 'Yes, Fisherman is completely free to use.' }
+            ]
+          },
+          he: {
+            title: 'פישרמן - שאלות נפוצות',
+            questions: [
+              { q: 'איך פישרמן חוסם הודעות פישינג?', a: 'פישרמן מזהה באופן אוטומטי וחוסם הודעות פישינג באמצעות פילטרים מתקדמים.' },
+              { q: 'האם האפליקציה בחינם?', a: 'כן, פישרמן הוא שירות חינמי לחלוטין.' }
+            ]
+          }
+        };
+
+        const selectedFaq = faqData[lang];
+
+        // Update title
+        document.getElementById('page-title').innerText = selectedFaq.title;
+        document.getElementById('faq-title').innerText = selectedFaq.title;
+
+        // Update FAQ cards
+        const faqContainer = document.getElementById('faq-list');
+        faqContainer.innerHTML = '';
+        selectedFaq.questions.forEach((faq, index) => {
+          faqContainer.innerHTML += `
+            <div class="faq-card" onclick="toggleFaqAnswer('faq-${index}')">
+              <h3>${faq.q}</h3>
+              <div id="faq-${index}" class="faq-answer">${faq.a}</div>
+            </div>`;
+        });
+      }
+
+      // Initialize on page load
+      window.onload = function() {
+        updateLanguage();
+      }
+    </script>
+  </head>
+
+  <body>
+    <!-- FAQ Page Content -->
+    <section class="faq-container">
+      <!-- Language Selector -->
+      <div class="language-selector">
+        <label for="lang">Choose Language:</label>
+        <select id="lang" onchange="setLanguage(this.value)">
+          <option value="en">English</option>
+          <option value="he">עברית</option>
+        </select>
+      </div>
+
+      <!-- FAQ Title -->
+      <h1 id="faq-title" class="faq-title">Fisherman FAQ</h1>
+
+      <!-- FAQ List -->
+      <div id="faq-list">
+        <!-- Dynamic FAQ content will be loaded here -->
+      </div>
+    </section>
+
+    <!-- Footer (Optional for consistency) -->
+    <section id="footer">
+      <div class="links">
+        <ul>
+          <li><a href="docs/privacy.html">Privacy Policy</a></li>
+          <li><a href="docs/terms.html">Terms of Service</a></li>
+          <li><a href="https://wa.me/972523632387?text=Hey Fisherman, I need help!">Support</a></li>
+          <li><a href="https://apps.apple.com/il/app/fisherman-sms-filtering/id6449192504">Download</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Required JavaScript Files -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </body>
+</html>
