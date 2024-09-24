@@ -10,6 +10,7 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" as="style">
     <link rel="preload" href="css/styles.css" as="style">
     <link rel="preload" href="css/grid.css" as="style">
+    <link rel="preload" href="images/appstore-2x.webp" as="image">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png" />
@@ -85,10 +86,9 @@
         right: 20px;
         display: inline-block;
       }
-      .language-btn img {
-        width: 32px;
-        height: 32px;
+      .language-btn {
         cursor: pointer;
+        font-size: 1.5rem;
       }
       .dropdown-content {
         display: none;
@@ -148,16 +148,10 @@
   <body>
     <!-- Language switcher with flags -->
     <div class="language-switcher">
-      <button class="language-btn" onclick="toggleLanguageDropdown()">
-        <img id="flag-icon" src="images/flag_israel.png" alt="Language Flag" />
-      </button>
+      <span id="flag-icon" class="language-btn" onclick="toggleLanguageDropdown()">🇮🇱</span>
       <div id="language-dropdown" class="dropdown-content">
-        <a href="#" onclick="setLanguage('en')">
-          <img src="images/flag_usa.png" alt="English" /> English
-        </a>
-        <a href="#" onclick="setLanguage('he')">
-          <img src="images/flag_israel.png" alt="עברית" /> עברית
-        </a>
+        <a href="#" onclick="setLanguage('en')">🇺🇸 English</a>
+        <a href="#" onclick="setLanguage('he')">🇮🇱 עברית</a>
       </div>
     </div>
 
@@ -170,15 +164,116 @@
     <!-- Header Section -->
     <header id="home">
       <nav>
-        <!-- Add your existing navigation content here -->
+        <div class="navbar-logo">
+          <a href="#" class="logo">
+            <img src="images/app_logo_40.png" alt="Fisherman Logo" style="margin: 20 auto;">
+          </a>
+        </div>
+
+        <div class="navbar-logo">
+          <a href="#" class="logo" style="width: fit-content;">
+            Fisherman - פישרמן
+          </a>
+        </div>
+
+        <div class="navbar-logo">
+          <a href="https://apps.apple.com/il/app/fisherman-sms-filtering/id6449192504" class="logo">
+            <img src="images/appstore-nav.png" alt="" style="margin: 10 auto;">
+          </a>
+        </div>
       </nav>
     </header>
     <!-- End: Header Section -->
 
     <!-- Hero Section -->
     <div id="hero">
-      <!-- Add your existing hero section content here -->
+      <div class="row">
+        <div class="col span_1_of_2">
+          <div class="hero-description">
+            <h1 dir="rtl" style="margin: auto">
+              הגנה אוטומטית מהודעות פישינג וספאם <br />
+            </h1>
+            <a href="https://apps.apple.com/il/app/fisherman-sms-filtering/id6449192504" target="https://apps.apple.com/il/app/fisherman-sms-filtering/id6449192504">
+              <img src="images/appstore-2x.webp" alt="" style="display: block; margin: 0 auto; margin-bottom: 10px; margin-top: 40px;">
+            </a>
+            <p dir="rtl">
+              עם <span class="bold-text">פישרמן</span> אין יותר הודעות מתחזות וזבל!
+            </p>
+          </div>
+        </div>
+        <div class="col span_1_of_2">
+          <img class="hero-img" src="images/1.webp" alt="" />
+        </div>
+      </div>
     </div>
+
+    <!-- How To Section -->
+    <section id="howto">
+      <div class="row">
+        <div class="col span_1_of_3 first-col">
+          <div class="first-item">
+            <div class="item-description" dir="rtl" style="text-align: right;">
+              <h4>חסימה של הודעות פישינג</h4>
+              <p>זיהוי וחסימה אוטומטית של הודעות פישינג מתחזות והגנה על הפרטים האישיים שלכם.</p>
+            </div>
+            <div class="item-icon1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="2.5rem" height="2.rem" fill="currentColor" class="bi bi-chat-right-heart-fill" viewBox="0 0 16 16">
+                <path d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353V2ZM8 3.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z"/>
+              </svg>
+            </div>
+          </div>
+          <div class="first-item">
+            <div class="item-description" dir="rtl" style="text-align: right;">
+              <h4>חסימה של פרסומות וספאם</h4>
+              <p>באמצעות פילטרים מתקדמים, ויכולות AI, הודעות זבל ופרסומות מזוהות ומועברות לסל הזבל באופן אוטומטי.</p>
+            </div>
+            <div class="item-icon1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="2.5rem" height="2.5rem" fill="currentColor" class="bi bi-envelope-x-fill" viewBox="0 0 16 16">
+                <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.026A2 2 0 0 0 2 14h6.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586l-1.239-.757ZM16 4.697v4.974A4.491 4.491 0 0 0 12.5 8a4.49 4.49 0 0 0-1.965.45l-.338-.207L16 4.697Z"/>
+                <path d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Zm-4.854-1.354a.5.5 0 0 0 0 .708l.647.646-.647.646a.5.5 0 0 0 .708.708l.646-.647.646.647a.5.5 0 0 0 .708-.708l-.647-.646.647-.646a.5.5 0 0 0-.708-.708l-.646.647-.646-.647a.5.5 0 0 0-.708 0Z"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="col span_1_of_3 second-col">
+          <img class="big_image" src="images/2.webp" alt="" />
+        </div>
+        <div class="col span_1_of_3 third-col">
+          <div class="last-item">
+            <div class="item-icon2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="2.5rem" height="2.5rem" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+                 <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+              </svg>
+            </div>
+            <div class="item-description" dir="rtl" style="text-align: right;">
+              <h4>פילטרים מתעדכנים אוטומטית</h4>
+              <p>המערכת מתעדכנת ברקע 24/7 בזמן אמת באופן אוטומטי וללא מאמץ</p>
+            </div>
+          </div>
+          <div class="last-item">
+            <div class="item-icon2">
+              <svg
+                width="2.5rem"
+                height="2.5rem"
+                viewBox="0 0 16 16"
+                class="bi bi-person-check-fill"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path fill-rule="evenodd" d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+              </svg>
+            </div>
+            <div class="item-description" dir="rtl" style="text-align: right;">
+              <h4>שאלות? התייעצו איתנו</h4>
+              <p>בנוסף לסינון האוטומטי, ייעוץ והדרכה דרך הוואצאפ לגבי הודעות חשודות או כל שאלה אחרת</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End: How To Section -->
 
     <!-- FAQ Section -->
     <section id="faq">
@@ -209,8 +304,16 @@
 
     <!-- Footer Section -->
     <section id="footer">
-      <!-- Add your existing footer content here -->
+      <div class="links">
+        <ul>
+          <li><a href="docs/privacy.html">מדיניות פרטיות</a></li>
+          <li><a href="docs/terms.html">תנאי שימוש</a></li>
+          <li><a href="https://wa.me/972523632387?text=היי פישרמן, אני צריך עזרה! רשמו למטה עם מה ניתן לעזור ↓↓↓">תמיכה</a></li>
+          <li><a href="https://apps.apple.com/il/app/fisherman-sms-filtering/id6449192504">הורדה</a></li>
+        </ul>
+      </div>
     </section>
+    <!-- End: Footer Section -->
 
     <!-- Required JavaScript Files -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -247,7 +350,7 @@
 
         // Switch flag icon based on language
         const flagIcon = document.getElementById("flag-icon");
-        flagIcon.src = lang === "en" ? "images/flag_usa.png" : "images/flag_israel.png";
+        flagIcon.innerText = lang === "en" ? "🇺🇸" : "🇮🇱";
 
         const faqData = {
           en: {
