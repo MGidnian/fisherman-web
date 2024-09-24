@@ -365,6 +365,63 @@
     </section> -->
     <!-- End: Subscribe Section -->
 
+    <!-- FAQ Section -->
+    <section id="faq">
+  <div class="faq-container">
+    <h2 id="faq-title" class="faq-title">Fisherman FAQ</h2>
+    <div id="faq-list"></div>
+  </div>
+</section>
+
+<style>
+  .faq-container {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .faq-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  .faq-card {
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    padding: 15px;
+    cursor: pointer;
+  }
+  .faq-card h3 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  .faq-answer {
+    display: none;
+    padding-top: 10px;
+    font-size: 1rem;
+  }
+</style>
+
+<script>
+  function toggleFaqAnswer(faqId) {
+    var answerElement = document.getElementById(faqId);
+    if (answerElement.style.display === 'block') {
+      answerElement.style.display = 'none';
+    } else {
+      answerElement.style.display = 'block';
+    }
+  }
+
+  // Load language data once page is ready
+  window.onload = function() {
+    updateLanguage(); // Ensures the FAQ loads in the correct language on page load
+  }
+</script>
+
+
     <!-- Download The App Section -->
     <section id="download">
       <div class="row">
