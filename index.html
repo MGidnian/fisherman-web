@@ -64,6 +64,21 @@
     <!-- Preloader End -->
     <!-- Header Section -->
     <header id="home">
+      <div class="language-switcher">
+          <button class="language-btn" onclick="toggleLanguageDropdown()">
+            <img id="flag-icon" src="images/flag_israel.png" alt="Language Flag" />
+          </button>
+          <div id="language-dropdown" class="dropdown-content">
+            <a href="#" onclick="setLanguage('en')">
+              <img src="images/flag_usa.png" alt="English" /> English
+            </a>
+            <a href="#" onclick="setLanguage('he')">
+              <img src="images/flag_israel.png" alt="עברית" /> עברית
+            </a>
+          </div>
+        </div>
+    
+
       <nav>
         <div class="navbar-logo">
           <a href="#" class="logo">
