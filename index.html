@@ -303,8 +303,10 @@
         const faqContainer = document.getElementById('faq');
         if (lang === "he") {
           faqContainer.setAttribute("dir", "rtl");
+          document.querySelectorAll('.faq-card').forEach(card => card.style.textAlign = "right"); // Align Hebrew text to the right
         } else {
           faqContainer.setAttribute("dir", "ltr");
+          document.querySelectorAll('.faq-card').forEach(card => card.style.textAlign = "left"); // Align English text to the left
         }
 
         const faqData = {
