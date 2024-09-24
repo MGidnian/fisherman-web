@@ -107,6 +107,32 @@
       .dropdown-content a:hover {
         background-color: #f1f1f1;
       }
+
+      /* Preloader */
+      .preloader {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .preloader .loader {
+        border: 6px solid #f3f3f3;
+        border-top: 6px solid #3498db;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
     </style>
 
     <!-- Clarity Script with async attribute -->
@@ -190,6 +216,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script>
+      // Hide preloader when page finishes loading
+      window.onload = function() {
+        document.querySelector('.preloader').style.display = 'none'; // Hides preloader
+        updateLanguage(); // Ensures the FAQ loads in the correct language on page load
+      }
+
       // Toggle FAQ answer visibility
       function toggleFaqAnswer(faqId) {
         var answerElement = document.getElementById(faqId);
@@ -206,11 +238,6 @@
         urlParams.set("lang", lang);
         window.location.search = urlParams.toString();
         updateLanguage();
-      }
-
-      // Load language data once page is ready
-      window.onload = function() {
-        updateLanguage(); // Ensures the FAQ loads in the correct language on page load
       }
 
       // Update the page content based on selected language
