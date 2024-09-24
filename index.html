@@ -11,6 +11,39 @@
     <link rel="preload" href="css/styles.css" as="style">
     <link rel="preload" href="css/grid.css" as="style">
     <link rel="preload" href="images/appstore-2x.webp" as="image">
+    <style>
+      .faq-container {
+        padding: 20px;
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: left;
+      }
+      .faq-title {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+      .faq-card {
+        background: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 10px;
+        padding: 15px;
+        cursor: pointer;
+        color: black;
+      }
+      .faq-card h3 {
+        margin: 0;
+        font-size: 1.5rem;
+      }
+      .faq-answer {
+        display: none;
+        padding-top: 10px;
+        font-size: 1rem;
+      }
+  </style>
+
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png" />
@@ -365,6 +398,37 @@
     </section> -->
     <!-- End: Subscribe Section -->
 
+    <!-- FAQ Section -->
+    <!-- FAQ Section -->
+    <section id="faq" class="howto-section">
+      <div class="faq-container">
+        <h2 id="faq-title" class="faq-title">Fisherman FAQ</h2>
+        <div id="faq-list">
+          <!-- FAQ items -->
+          <div class="faq-card" onclick="toggleFaqAnswer('faq-1')">
+            <h3>איך פישרמן חוסם הודעות פישינג?</h3>
+            <div id="faq-1" class="faq-answer">פישרמן משתמש בפילטרים חכמים לאיתור אוטומטי של הודעות פישינג וחסימתן.</div>
+          </div>
+          <div class="faq-card" onclick="toggleFaqAnswer('faq-2')">
+            <h3>האם השימוש בפישרמן הוא בחינם?</h3>
+            <div id="faq-2" class="faq-answer">כן, פישרמן זמין בחינם לכל המשתמשים.</div>
+          </div>
+          <div class="faq-card" onclick="toggleFaqAnswer('faq-3')">
+            <h3>איך מתקינים את פישרמן?</h3>
+            <div id="faq-3" class="faq-answer">ניתן להוריד את פישרמן מה-App Store ולעקוב אחרי ההוראות להפעלת סינון הודעות SMS.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- FAQ Toggle Script -->
+    <script>
+      function toggleFaqAnswer(faqId) {
+        var answer = document.getElementById(faqId);
+        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+      }
+    </script>
+
     <!-- Download The App Section -->
     <section id="download">
       <div class="row">
@@ -408,7 +472,7 @@
     <!-- Required JavaScript Files & CDN -->
     <!-- JQuery CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+    
     <!-- Main JS Files -->
     <script src="js/essential.js"></script>
     <script src="js/jquery.nice-select.min.js"></script>
