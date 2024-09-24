@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,6 +11,50 @@
     <link rel="preload" href="css/styles.css" as="style">
     <link rel="preload" href="css/grid.css" as="style">
     <link rel="preload" href="images/appstore-2x.webp" as="image">
+    <style>
+      .faq-container {
+        padding: 20px;
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: left;
+        background-color: blue; /* Updated for blue background */
+      }
+      .faq-title {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+      .faq-card {
+        background: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 10px;
+        padding: 15px;
+        cursor: pointer;
+        color: black;
+      }
+      .faq-card h3 {
+        margin: 0;
+        font-size: 1.5rem;
+      }
+      .faq-answer {
+        display: none;
+        padding-top: 10px;
+        font-size: 1rem;
+      }
+
+      /* Language Selector Styles */
+      .language-selector {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+      .language-selector select {
+        padding: 10px;
+        font-size: 1rem;
+      }
+    </style>
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png" />
@@ -47,101 +91,6 @@
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/grid.css" />
 
-    <!-- Custom FAQ Style -->
-    <style>
-      .howto-section {
-        background-color: #2596be; /* The blue background color */
-        padding: 40px 0; /* Adjust the padding as necessary */
-        color: white; /* Ensure text is readable on the blue background */
-      }
-
-      .faq-container {
-        padding: 20px;
-        max-width: 900px;
-        margin: 0 auto;
-        text-align: left;
-      }
-      .faq-title {
-        text-align: center;
-        margin-bottom: 40px;
-        font-size: 2rem;
-        font-weight: bold;
-      }
-      .faq-card {
-        background: #f9f9f9;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        margin-bottom: 10px;
-        padding: 15px;
-        cursor: pointer;
-        color: black; /* Text inside cards should stay dark for readability */
-      }
-      .faq-card h3 {
-        margin: 0;
-        font-size: 1.5rem;
-      }
-      .faq-answer {
-        display: none;
-        padding-top: 10px;
-        font-size: 1rem;
-      }
-
-      /* Language switcher styling */
-      .language-switcher {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        display: inline-block;
-      }
-      .language-btn {
-        cursor: pointer;
-        font-size: 1.5rem;
-      }
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f9f9f9;
-        min-width: 100px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-      }
-      .dropdown-content a {
-        color: black;
-        padding: 8px 16px;
-        text-decoration: none;
-        display: block;
-      }
-      .dropdown-content a:hover {
-        background-color: #f1f1f1;
-      }
-
-      /* Preloader */
-      .preloader {
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 9999;
-        background-color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .preloader .loader {
-        border: 6px solid #f3f3f3;
-        border-top: 6px solid #3498db;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        animation: spin 1s linear infinite;
-      }
-      @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }
-    </style>
-
     <!-- Clarity Script with async attribute -->
     <script async type="text/javascript">
       (function(c,l,a,r,i,t,y){
@@ -151,22 +100,7 @@
       })(window, document, "clarity", "script", "ia5irlsmfr");
     </script>
   </head>
-
   <body>
-    <!-- Language switcher with flags -->
-    <div class="language-switcher">
-      <span id="flag-icon" class="language-btn" onclick="toggleLanguageDropdown()">🇮🇱</span>
-      <div id="language-dropdown" class="dropdown-content">
-        <a href="#" onclick="setLanguage('en')">🇺🇸 English</a>
-        <a href="#" onclick="setLanguage('he')">🇮🇱 עברית</a>
-      </div>
-    </div>
-
-    <!-- Preloader -->
-    <div class="preloader">
-      <div class="loader"></div>
-    </div>
-    <!-- Preloader End -->
 
     <!-- Header Section -->
     <header id="home">
@@ -174,61 +108,143 @@
         <div class="navbar-logo">
           <a href="#" class="logo">
             <img src="images/app_logo_40.png" alt="Fisherman Logo" style="margin: 20 auto;">
-          </a>
+          </a>    
         </div>
 
         <div class="navbar-logo">
           <a href="#" class="logo" style="width: fit-content;">
             Fisherman - פישרמן
-          </a>
+          </a>    
         </div>
-
+            
         <div class="navbar-logo">
           <a href="https://apps.apple.com/il/app/fisherman-sms-filtering/id6449192504" class="logo">
             <img src="images/appstore-nav.png" alt="" style="margin: 10 auto;">
-          </a>
+          </a>    
         </div>
       </nav>
+      <div id="hero">
+        <div class="row">
+          <div class="col span_1_of_2">
+            <div class="hero-description">
+            </a>      
+            <h1 dir="rtl" style="margin: auto">
+                הגנה אוטומטית מהודעות פישינג וספאם <br />
+            </h1>
+              <a href="https://apps.apple.com/il/app/fisherman-sms-filtering/id6449192504" target="https://apps.apple.com/il/app/fisherman-sms-filtering/id6449192504">
+                <img src="images/appstore-2x.webp" alt="" style="display: block; margin: 0 auto; margin-bottom: 10px; margin-top: 40px;">
+              </a>
+              <p dir="rtl">
+                עם <span class="bold-text">פישרמן</span> אין יותר הודעות מתחזות וזבל !
+              </p>
+            </div>
+          </div>
+          <div class="col span_1_of_2">
+            <img class="hero-img" src="images/1.webp" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="shape-divider">
+        <div class="custom-shape-divider-bottom-1603385849">
+          <svg
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
+              class="shape-fill"
+            ></path>
+          </svg>
+        </div>
+      </div>
+      <button onclick="topFunction()" id="scrollUp" title="Go to top">
+        <svg
+          width="1.5rem"
+          height="1.5rem"
+          viewBox="0 0 16 16"
+          class="bi bi-arrow-up"
+          fill="currentColor"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"
+          />
+        </svg>
+      </button>
     </header>
     <!-- End: Header Section -->
 
-    <!-- Hero Section -->
-    <div id="hero">
-      <div class="row">
-        <div class="col span_1_of_2">
-          <div class="hero-description">
-            <h1 dir="rtl" style="margin: auto">
-              הגנה אוטומטית מהודעות פישינג וספאם <br />
-            </h1>
-            <a href="https://apps.apple.com/il/app/fisherman-sms-filtering/id6449192504" target="https://apps.apple.com/il/app/fisherman-sms-filtering/id6449192504">
-              <img src="images/appstore-2x.webp" alt="" style="display: block; margin: 0 auto; margin-bottom: 10px; margin-top: 40px;">
-            </a>
-            <p dir="rtl">
-              עם <span class="bold-text">פישרמן</span> אין יותר הודעות מתחזות וזבל!
-            </p>
-          </div>
-        </div>
-        <div class="col span_1_of_2">
-          <img class="hero-img" src="images/1.webp" alt="" />
-        </div>
-      </div>
-    </div>
-
-    <!-- How To Section -->
-    <section id="howto">
-      <div class="row">
-        <!-- Content from your HowTo section here -->
-      </div>
-    </section>
-    <!-- End: How To Section -->
-
-    <!-- FAQ Section -->
+    <!-- FAQ Section with Language Selector -->
     <section id="faq" class="howto-section">
       <div class="faq-container">
-        <h2 id="faq-title" class="faq-title">Fisherman FAQ</h2>
-        <div id="faq-list"></div>
+        <div class="language-selector">
+          <select id="faq-language" onchange="toggleFaqLanguage()">
+            <option value="hebrew">עברית</option>
+            <option value="english">English</option>
+          </select>
+        </div>
+
+        <!-- Hebrew FAQ -->
+        <div id="hebrew-faq" style="display: block;">
+          <h2 class="faq-title">שאלות ותשובות</h2>
+          <div class="faq-card" onclick="toggleFaqAnswer('faq-he-1')">
+            <h3>איך פישרמן חוסם הודעות פישינג?</h3>
+            <div id="faq-he-1" class="faq-answer">פישרמן משתמש בפילטרים חכמים לאיתור אוטומטי של הודעות פישינג וחסימתן.</div>
+          </div>
+          <div class="faq-card" onclick="toggleFaqAnswer('faq-he-2')">
+            <h3>האם השימוש בפישרמן הוא בחינם?</h3>
+            <div id="faq-he-2" class="faq-answer">כן, פישרמן זמין בחינם לכל המשתמשים.</div>
+          </div>
+          <div class="faq-card" onclick="toggleFaqAnswer('faq-he-3')">
+            <h3>איך מתקינים את פישרמן?</h3>
+            <div id="faq-he-3" class="faq-answer">ניתן להוריד את פישרמן מה-App Store ולעקוב אחרי ההוראות להפעלת סינון הודעות SMS.</div>
+          </div>
+        </div>
+
+        <!-- English FAQ -->
+        <div id="english-faq" style="display: none;">
+          <h2 class="faq-title">Fisherman FAQ</h2>
+          <div class="faq-card" onclick="toggleFaqAnswer('faq-en-1')">
+            <h3>How does Fisherman block phishing messages?</h3>
+            <div id="faq-en-1" class="faq-answer">Fisherman uses smart filters to automatically detect and block phishing messages.</div>
+          </div>
+          <div class="faq-card" onclick="toggleFaqAnswer('faq-en-2')">
+            <h3>Is Fisherman free to use?</h3>
+            <div id="faq-en-2" class="faq-answer">Yes, Fisherman is available for free to all users.</div>
+          </div>
+          <div class="faq-card" onclick="toggleFaqAnswer('faq-en-3')">
+            <h3>How do I install Fisherman?</h3>
+            <div id="faq-en-3" class="faq-answer">Fisherman can be downloaded from the App Store, and follow the instructions to enable SMS filtering.</div>
+          </div>
+        </div>
       </div>
     </section>
+    <!-- End: FAQ Section -->
+
+    <!-- FAQ Toggle Script -->
+    <script>
+      function toggleFaqAnswer(faqId) {
+        var answer = document.getElementById(faqId);
+        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+      }
+
+      function toggleFaqLanguage() {
+        var selectedLanguage = document.getElementById("faq-language").value;
+        var hebrewFaq = document.getElementById("hebrew-faq");
+        var englishFaq = document.getElementById("english-faq");
+
+        if (selectedLanguage === "hebrew") {
+          hebrewFaq.style.display = "block";
+          englishFaq.style.display = "none";
+        } else {
+          hebrewFaq.style.display = "none";
+          englishFaq.style.display = "block";
+        }
+      }
+    </script>
 
     <!-- Download The App Section -->
     <section id="download">
@@ -239,11 +255,12 @@
         </h2>
         <p class="">
           Fisherman will help keep your personal information safe and reduce the SMS clutter in your phone. <br>
-          Fisherman is an iOS app that automatically detects and blocks phishing, spam and advertisements from your SMS inbox. Helping to keep your personal information safe and reduce the SMS clutter in your phone. <br>
-          From now on, your SMS experience is going to be amazing!
+          Fisherman is an iOS app that automatically detects and blocks phishing, spam and advertisment from your SMS inbox. Helping to keep your personal information safe and reduce the SMS clutter in your phone. <br>
+          Fron now on, your SMS experience is going to be amazing!
         </p>
+
         <a href="https://apps.apple.com/il/app/fisherman-sms-filtering/id6449192504">
-          <img src="images/appstore.png" alt="App Store" />
+          <img src="images/appstore.png" alt=""/>
         </a>
       </div>
     </section>
@@ -259,103 +276,23 @@
           <li><a href="https://apps.apple.com/il/app/fisherman-sms-filtering/id6449192504">הורדה</a></li>
         </ul>
       </div>
+      <!-- <div class="language-option">
+        <select name="Languages">
+          <option value="English" selected>ENGLISH</option>
+          <option value="বাংলা">বাংলা</option>
+          <option value="हिन्दी">हिन्दी</option>
+        </select>
+      </div> -->
     </section>
     <!-- End: Footer Section -->
 
-    <!-- Required JavaScript Files -->
+    <!-- Required JavaScript Files & CDN -->
+    <!-- JQuery CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <script>
-      // Hide preloader when page finishes loading
-      window.onload = function() {
-        document.querySelector('.preloader').style.display = 'none'; // Hides preloader
-        updateLanguage(); // Ensures the FAQ loads in the correct language on page load
-      }
-
-      // Toggle FAQ answer visibility
-      function toggleFaqAnswer(faqId) {
-        var answerElement = document.getElementById(faqId);
-        if (answerElement.style.display === 'block') {
-          answerElement.style.display = 'none';
-        } else {
-          answerElement.style.display = 'block';
-        }
-      }
-
-      // Handle language change
-      function setLanguage(lang) {
-        const urlParams = new URLSearchParams(window.location.search);
-        urlParams.set("lang", lang);
-        window.location.search = urlParams.toString();
-        updateLanguage();
-      }
-
-      // Update the page content based on selected language
-      function updateLanguage() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const lang = urlParams.get('lang') || 'he';  // Hebrew as default
-
-        // Switch flag icon based on language
-        const flagIcon = document.getElementById("flag-icon");
-        flagIcon.innerText = lang === "en" ? "🇺🇸" : "🇮🇱";
-
-        // Set text direction based on language
-        const faqContainer = document.getElementById('faq');
-        if (lang === "he") {
-          faqContainer.setAttribute("dir", "rtl");
-          document.querySelectorAll('.faq-card').forEach(card => card.style.textAlign = "right"); // Align Hebrew text to the right
-        } else {
-          faqContainer.setAttribute("dir", "ltr");
-          document.querySelectorAll('.faq-card').forEach(card => card.style.textAlign = "left"); // Align English text to the left
-        }
-
-        const faqData = {
-          en: {
-            title: "Fisherman FAQ",
-            questions: [
-              { q: "How does Fisherman block phishing?", a: "Fisherman uses advanced AI filters to automatically detect and block phishing messages." },
-              { q: "Is Fisherman free to use?", a: "Yes, Fisherman is completely free for all users." },
-              { q: "How do I install Fisherman?", a: "You can download Fisherman from the App Store and follow the on-screen instructions to activate SMS filtering." },
-              { q: "Does Fisherman work offline?", a: "No, Fisherman requires an active internet connection to update its spam and phishing filters." },
-              { q: "How can I get support?", a: "You can reach out to us via the support link in the app or through our website's support page." }
-            ]
-          },
-          he: {
-            title: "פישרמן - שאלות נפוצות",
-            questions: [
-              { q: "איך פישרמן חוסם הודעות פישינג?", a: "פישרמן משתמש בפילטרים חכמים לאיתור אוטומטי של הודעות פישינג וחסימתן." },
-              { q: "האם השימוש בפישרמן הוא בחינם?", a: "כן, פישרמן זמין בחינם לכל המשתמשים." },
-              { q: "איך מתקינים את פישרמן?", a: "ניתן להוריד את פישרמן מה-App Store ולעקוב אחרי ההוראות להפעלת סינון הודעות SMS." },
-              { q: "האם פישרמן פועל במצב לא מקוון?", a: "לא, פישרמן דורש חיבור לאינטרנט כדי לעדכן את הפילטרים לסינון ספאם ופישינג." },
-              { q: "איך אפשר לקבל תמיכה?", a: "ניתן ליצור קשר דרך קישור התמיכה באפליקציה או באתר שלנו." }
-            ]
-          }
-        };
-
-        const selectedFaq = faqData[lang];
-
-        // Update title
-        document.getElementById('faq-title').innerText = selectedFaq.title;
-
-        // Update FAQ cards
-        const faqList = document.getElementById('faq-list');
-        faqList.innerHTML = '';
-        selectedFaq.questions.forEach((faq, index) => {
-          faqList.innerHTML += `
-            <div class="faq-card" onclick="toggleFaqAnswer('faq-${index}')">
-              <h3>${faq.q}</h3>
-              <div id="faq-${index}" class="faq-answer">${faq.a}</div>
-            </div>`;
-        });
-      }
-
-      // Toggle language dropdown
-      function toggleLanguageDropdown() {
-        document.getElementById("language-dropdown").style.display =
-          document.getElementById("language-dropdown").style.display === "block"
-            ? "none"
-            : "block";
-      }
-    </script>
+    
+    <!-- Main JS Files -->
+    <script src="js/essential.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
