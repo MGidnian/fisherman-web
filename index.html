@@ -344,36 +344,62 @@
       }
 
       // Update the page content based on selected language
-      function updateLanguage() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const lang = urlParams.get('lang') || 'he';  // Hebrew as default
+      // Update the page content based on selected language
+function updateLanguage() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const lang = urlParams.get('lang') || 'he';  // Hebrew as default
 
-        // Switch flag icon based on language
-        const flagIcon = document.getElementById("flag-icon");
-        flagIcon.innerText = lang === "en" ? "🇺🇸" : "🇮🇱";
+  // Switch flag icon based on language
+  const flagIcon = document.getElementById("flag-icon");
+  flagIcon.innerText = lang === "en" ? "🇺🇸" : "🇮🇱";
 
-        const faqData = {
-          en: {
-            title: "Fisherman FAQ",
-            questions: [
-              { q: "How does Fisherman block phishing?", a: "Fisherman uses advanced AI filters to automatically detect and block phishing messages." },
-              { q: "Is Fisherman free to use?", a: "Yes, Fisherman is completely free for all users." },
-              { q: "How do I install Fisherman?", a: "You can download Fisherman from the App Store and follow the on-screen instructions to activate SMS filtering." },
-              { q: "Does Fisherman work offline?", a: "No, Fisherman requires an active internet connection to update its spam and phishing filters." },
-              { q: "How can I get support?", a: "You can reach out to us via the support link in the app or through our website's support page." }
-            ]
-          },
-          he: {
-            title: "פישרמן - שאלות נפוצות",
-            questions: [
-              { q: "איך פישרמן חוסם הודעות פישינג?", a: "פישרמן משתמש בפילטרים חכמים לאיתור אוטומטי של הודעות פישינג וחסימתן." },
-              { q: "האם השימוש בפישרמן הוא בחינם?", a: "כן, פישרמן זמין בחינם לכל המשתמשים." },
-              { q: "איך מתקינים את פישרמן?", a: "ניתן להוריד את פישרמן מה-App Store ולעקוב אחרי ההוראות להפעלת סינון הודעות SMS." },
-              { q: "האם פישרמן פועל במצב לא מקוון?", a: "לא, פישרמן דורש חיבור לאינטרנט כדי לעדכן את הפילטרים לסינון ספאם ופישינג." },
-              { q: "איך אפשר לקבל תמיכה?", a: "ניתן ליצור קשר דרך קישור התמיכה באפליקציה או באתר שלנו." }
-            ]
-          }
-        };
+  // Set text direction based on language
+  const faqContainer = document.getElementById('faq');
+  if (lang === "he") {
+    faqContainer.setAttribute("dir", "rtl");
+  } else {
+    faqContainer.setAttribute("dir", "ltr");
+  }
+
+  const faqData = {
+    en: {
+      title: "Fisherman FAQ",
+      questions: [
+        { q: "How does Fisherman block phishing?", a: "Fisherman uses advanced AI filters to automatically detect and block phishing messages." },
+        { q: "Is Fisherman free to use?", a: "Yes, Fisherman is completely free for all users." },
+        { q: "How do I install Fisherman?", a: "You can download Fisherman from the App Store and follow the on-screen instructions to activate SMS filtering." },
+        { q: "Does Fisherman work offline?", a: "No, Fisherman requires an active internet connection to update its spam and phishing filters." },
+        { q: "How can I get support?", a: "You can reach out to us via the support link in the app or through our website's support page." }
+      ]
+    },
+    he: {
+      title: "פישרמן - שאלות נפוצות",
+      questions: [
+        { q: "איך פישרמן חוסם הודעות פישינג?", a: "פישרמן משתמש בפילטרים חכמים לאיתור אוטומטי של הודעות פישינג וחסימתן." },
+        { q: "האם השימוש בפישרמן הוא בחינם?", a: "כן, פישרמן זמין בחינם לכל המשתמשים." },
+        { q: "איך מתקינים את פישרמן?", a: "ניתן להוריד את פישרמן מה-App Store ולעקוב אחרי ההוראות להפעלת סינון הודעות SMS." },
+        { q: "האם פישרמן פועל במצב לא מקוון?", a: "לא, פישרמן דורש חיבור לאינטרנט כדי לעדכן את הפילטרים לסינון ספאם ופישינג." },
+        { q: "איך אפשר לקבל תמיכה?", a: "ניתן ליצור קשר דרך קישור התמיכה באפליקציה או באתר שלנו." }
+      ]
+    }
+  };
+
+  const selectedFaq = faqData[lang];
+
+  // Update title
+  document.getElementById('faq-title').innerText = selectedFaq.title;
+
+  // Update FAQ cards
+  const faqList = document.getElementById('faq-list');
+  faqList.innerHTML = '';
+  selectedFaq.questions.forEach((faq, index) => {
+    faqList.innerHTML += `
+      <div class="faq-card" onclick="toggleFaqAnswer('faq-${index}')">
+        <h3>${faq.q}</h3>
+        <div id="faq-${index}" class="faq-answer">${faq.a}</div>
+      </div>`;
+  });
+}
 
         const selectedFaq = faqData[lang];
 
