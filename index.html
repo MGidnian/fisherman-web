@@ -377,50 +377,89 @@
       </div>
     </div>
 
-    <!-- Hebrew FAQ -->
-    <div id="hebrew-faq" style="display: block;">
-      <div class="faq-card" onclick="toggleFaqAnswer('faq-he-1')">
-        <h3><span class="expand-symbol">+</span> איך פישרמן חוסם הודעות פישינג?</h3>
-        <div id="faq-he-1" class="faq-answer" style="display: none;">
-          פישרמן משתמש בפילטרים חכמים לאיתור אוטומטי של הודעות פישינג וחסימתן.
-        </div>
-      </div>
-
-      <div class="faq-card" onclick="toggleFaqAnswer('faq-he-2')">
-        <h3><span class="expand-symbol">+</span> האם השימוש בפישרמן הוא בחינם?</h3>
-        <div id="faq-he-2" class="faq-answer" style="display: none;">
-          כן, פישרמן זמין בחינם לכל המשתמשים.
-        </div>
-      </div>
-
-      <div class="faq-card" onclick="toggleFaqAnswer('faq-he-3')">
-        <h3><span class="expand-symbol">+</span> איך מתקינים את פישרמן?</h3>
-        <div id="faq-he-3" class="faq-answer" style="display: none;">
-          ניתן להוריד את פישרמן מה-App Store ולעקוב אחרי ההוראות להפעלת סינון הודעות SMS.
-        </div>
-      </div>
+<!-- Hebrew FAQ -->
+<div id="hebrew-faq" style="display: none;">
+  <div class="faq-card" onclick="toggleFaqAnswer('faq-he-1')">
+    <h3><span class="expand-symbol">+</span> איזה סוגי הודעות SMS פישרמן מסנן?</h3>
+    <div id="faq-he-1" class="faq-answer" style="display: none;">
+      1. פישינג - הודעות זדוניות המתחזות לתקשורת לגיטימית מעסקים (למשל דואר ישראל, ביט, DHL, UPS)<br>
+      2. ספאם - הודעות שנשלחות ללא תוכן ובעלי ערך נמוך (למשל ספאם בחירות, תזכורות לשבת, הצעות לסמים)<br>
+      3. פרסומות - הודעות קידום מכירות
     </div>
+  </div>
+
+  <div class="faq-card" onclick="toggleFaqAnswer('faq-he-2')">
+    <h3><span class="expand-symbol">+</span> מה קורה כאשר הודעה מסוננת?</h3>
+    <div id="faq-he-2" class="faq-answer" style="display: none;">
+      ברגע שאתה מפעיל את פישרמן, תיקיית ספאם חדשה מתווספת לאפליקציית ההודעות שלך. כל ההודעות המסוננות יהיו זמינות שם.
+      הסינונים מתעדכנים אוטומטית.
+    </div>
+  </div>
+  
+  <div class="faq-card" onclick="toggleFaqAnswer('faq-he-3')">
+    <h3><span class="expand-symbol">+</span> איך פישרמן חוסם הודעות פישינג?</h3>
+    <div id="faq-he-3" class="faq-answer" style="display: none;">
+      כל הודעה שמתקבלת נסרקת ומאותתים רבים מופקים, כולל מילות מפתח וקישורים מההודעה.
+      קישורים לא ידועים נשלחים למנוע זיהוי לסיווג האם הם הונאה (מעמידים פנים כעסק אחר לגניבת המידע שלך).<br>
+      בנוסף, טקסט ההודעה נסרק לחיפוש מילות מפתח של ספאם ופרסומות.
+    </div>
+  </div>
+
+  <div class="faq-card" onclick="toggleFaqAnswer('faq-he-4')">
+    <h3><span class="expand-symbol">+</span> האם פישרמן בחינם לשימוש?</h3>
+    <div id="faq-he-4" class="faq-answer" style="display: none;">
+      כן, פישרמן זמין בחינם לכל המשתמשים.
+    </div>
+  </div>
+
+  <div class="faq-card" onclick="toggleFaqAnswer('faq-he-5')">
+    <h3><span class="expand-symbol">+</span> מה קורה אם פישרמן חוסם הודעה לגיטימית?</h3>
+    <div id="faq-he-5" class="faq-answer" style="display: none;">
+      פישרמן משתמש במסננים מתקדמים עם אחוז נמוך מאוד של תוצאות שגויות. עם זאת, תמיד תוכל לראות הודעות חסומות בתיקיית דואר הזבל.
+    </div>
+  </div>
+</div>
+
 
     <!-- English FAQ -->
     <div id="english-faq" style="display: none;">
       <div class="faq-card" onclick="toggleFaqAnswer('faq-en-1')">
-        <h3><span class="expand-symbol">+</span> How does Fisherman block phishing messages?</h3>
+        <h3><span class="expand-symbol">+</span> What type of SMS Fisherman filters?</h3>
         <div id="faq-en-1" class="faq-answer" style="display: none;">
-          Fisherman uses smart filters to automatically detect and block phishing messages.
+          1. Phishing - malicious messages pretending to be legitimate communication from a business (i.e Israel Post, Bit, DHL, UPS)<br>
+          2. Spam - Messages that are sent without content and no value (i.e Election spam, Shabbat reminders, drugs solicitaion)<br>
+          3. Ads - Promotional messages
         </div>
       </div>
 
       <div class="faq-card" onclick="toggleFaqAnswer('faq-en-2')">
-        <h3><span class="expand-symbol">+</span> Is Fisherman free to use?</h3>
+        <h3><span class="expand-symbol">+</span> What happens when a message is fitered? </h3>
         <div id="faq-en-2" class="faq-answer" style="display: none;">
+          Once you activate Fisherman, a new Spam folder is added to your messages app. All filteres messages will be available there.
+          Filters are updated automatically
+        </div>
+      </div>
+      
+      <div class="faq-card" onclick="toggleFaqAnswer('faq-en-3')">
+        <h3><span class="expand-symbol">+</span> How does Fisherman block phishing messages?</h3>
+        <div id="faq-en-3" class="faq-answer" style="display: none;">
+          Every message that is recieved is scanned and many signals are being extracted, this can include keywords and links from the message.
+          Unknown links are send for a detection engine to classify if they are fraudulent (pretend to be a different business to steal your information)<br>
+          Other wise the message text is scanned for spam and ads keywords.
+        </div>
+      </div>
+
+      <div class="faq-card" onclick="toggleFaqAnswer('faq-en-4')">
+        <h3><span class="expand-symbol">+</span> Is Fisherman free to use?</h3>
+        <div id="faq-en-4" class="faq-answer" style="display: none;">
           Yes, Fisherman is available for free for all users.
         </div>
       </div>
 
-      <div class="faq-card" onclick="toggleFaqAnswer('faq-en-3')">
-        <h3><span class="expand-symbol">+</span> How do I install Fisherman?</h3>
-        <div id="faq-en-3" class="faq-answer" style="display: none;">
-          Fisherman can be downloaded from the App Store, and follow the instructions to enable SMS filtering.
+      <div class="faq-card" onclick="toggleFaqAnswer('faq-en-5')">
+        <h3><span class="expand-symbol">+</span> What happens if Fisherman blocks a legitimate message?</h3>
+        <div id="faq-en-5" class="faq-answer" style="display: none;">
+          Fisherman uses advanced filters with extreamlly low false-positives. Regadless, you can always see blocked messages in the Junk folder.
         </div>
       </div>
     </div>
