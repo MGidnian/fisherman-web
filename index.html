@@ -489,6 +489,11 @@
     </script>
 
     <script>
+      window.onload = function() {
+        // Display Hebrew FAQ by default on page load
+        document.getElementById('hebrew-faq').style.display = 'block';
+      };
+
       function toggleFaqLanguage() {
       var selectedLanguage = document.getElementById("faq-language").value;
       var hebrewFaq = document.getElementById("hebrew-faq");
